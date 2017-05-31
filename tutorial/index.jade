@@ -1,0 +1,103 @@
+.chapter(data-title='Getting Started with Glip Bots')
+  .step(data-title='Welcome!', data-file='tutorial/config.json')
+    h2 Welcome to the Getting Started with RingCentral Glip Tutorials
+
+    p Glip provides a single, unified team workspace that empowers you to work, communicate, and collaberate faster and more effectively.
+
+    p In this tutorial, we will look at how to build bots to enhances the productivity even more than ever before usign IBM Watson.
+
+  .step(data-title='Prerequisites', data-file='index.js', data-highlight='')
+    :markdown
+      ## Requirements
+
+        * Create Two free RingCentral developer account with Platform and API access (Don't have a RingCentral Account, no worries. [Get your free RingCentral Developer Account Now](https://developers.ringcentral.com/free-tier-sign-up.html))
+            * Account #1 - for building a bot.
+            * Account #2 - for testing the bot
+        * Create an application defined in the [RingCentral Developer Portal](https://developers.ringcentral.com) that has the following properties:
+            * Platform Type: server-only
+            * API Permissions: Glip
+        * An [IBM Blumix](https://www.ibm.com/cloud-computing/bluemix/watson) account.
+        * Credentials for IBM Watson personality Insight.
+
+  .step(data-title='Download from Github', data-file='.env.template')
+    :markdown
+      ## Clone Repo
+
+      * As a first step, clone the sample application from [Github](https://github.com/pkvenu/botkit-watson-bot).
+
+        `git clone https://github.com/pkvenu/botkit-watson-bot.git`
+
+      * Create a copy of the .env.template file and rename it to .env
+
+        `mv .env.template .env`
+
+  .step(data-title='Tutorial Configuration', data-file='.env.template')
+    :markdown
+      ## Configuration
+
+      The first file we'll look at is `config.json`. This contains high-level configuration information about your tutorial. This JSON file contains several properties you can declare about your tutorial:
+
+      * `GLIP_SERVER`: Developer account - Sandbox or Production
+      * `GLIP_APPKEY`: Developer Account App Key.
+      * `GLIP_APPSECRET`: Developer Account App Secret.
+      * `GLIP_USERNAME`: Glip Username
+      * `GLIP_PASSWORD`: Glip Password
+      * `WATSON_USERNAME`: IBM Blumix Username
+      * `WATSON_PASSWORD`: IBM Blumix Password
+      * `WATSON_URL`: Personality Insight URL
+      * `WATSON_VERSION_DATE`: Personality Insight Version Date
+      * `WATSON_VERSION`: Personality Insight Version
+
+  .step(data-title='Install Application Dependencies', data-file='index.js', data-highlight='6-12')
+    :markdown
+     In this step will install all dependencies using the code below:
+
+      `npm install --save`
+
+     This install two major packages:
+
+      * `botkit`: Botkit is one of the most popular open-source toolkits for building bots. We will use the Glip adapter for the current example.
+      * `watson-developer-cloud`: Watson Developer cloud contains the modules for Machine Learning and AI. We will be using the Personality Insight module in the current example.
+
+  .step(data-title='Instantiate Glip Botkit adapter', data-file='index.js', data-highlight='14-40')
+    :markdown
+      Here we will instantiate the botkit adapater by calling the `botkit.glipbot()` module. The botkit constructure returns a controller objects. By attaching event handlers to the controller object, developers can specify what their bot should look and respond to, including keywords, patterns and various messaging and status events.
+
+      The controller object is then userd to `spawn()` bot instances that represents a specific bot identity and connection to Glip. Once spawned and connected to the API, the bot user will appear online in Glip, and can then be used to send messages and conduct conversations with users.
+
+  .step(data-title='Create IBM Watson instance', data-file='index.js', data-highlight='42-47')
+    :markdown
+      IBM Watson offers AI and Machine Learning services through its Bluemix cloud platform. To get started quickly with Watson and Bluemix, create a free account . 
+
+      To instantiate the IBM Watson Personality Insight, we will use the `Watson-developer-cloud` npm and 'personality insight' module.
+
+  .step(data-title='Send Data to IBM Watson', data-file='index.js', data-highlight='49-82')
+    :markdown
+      Now all basic dependencies are added. Lets get into the business logic.
+
+      Botkit provides the `hears()` function, which configures event handlers based on matching specific keywords or phrases in the message text.
+
+      We use the `hears()` method to lisit to the `Watson: analyze` keyword. Once the keyword is triggered we collect all post's for the current group and pass it to watson for analyze.
+
+      Watson will analyze all data and return back with top 5 personality insights.
+
+  .step(data-file='package.json', data-highlight='6-8')
+    :markdown
+      ## Start the App
+
+        You can look inside the `scripts` section of the `package.json` for this repository to see you can use NPM to start the app. In your terminal, use:
+
+        `npm start`
+
+        Now login to the sandbox account `http:\\glip.devtest.ringcentral.com` and add the bot by clicking on the `+` icon as shown below:
+
+        ![add Glip bot](images/add_user.png)
+
+  .step(data-file='', data-highlight='')
+    :markdown
+      ## Output
+
+        Type `watson: analyze`. Glip will send all history in the group and respond back with top 5 personality insigths as shown in the image.
+
+        ![](images/IBM_Watson_output.png)
+
