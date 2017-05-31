@@ -1,0 +1,29 @@
+{
+  "name": "botkit-watson-bot-nodejs-demo",
+  "version": "1.0.0",
+  "description": "Botkit example with watson personality insight",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "botkit": "git://github.com/pkvenu/botkit.git#master",
+    "dotenv": "4.0.0",
+    "http": "0.0.0",
+    "os": "0.1.1",
+    "request": "2.81.0",
+    "watson-developer-cloud": "2.27.0"
+  },
+  "keywords": [
+    "botkit",
+    "watson",
+    "personality",
+    "insight",
+    "chatbot"
+  ],
+  "author": "pawan.venugopal@ringcentral.com",
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^2.13.1"
+  }
+}
