@@ -15,7 +15,7 @@ Here's an excerpt of Botkit's `readme.md` file:
 > [[Botkit](https://www.github.com/howdyai/botkit)] provides a semantic interface to sending and receiving messages so that developers can focus on creating novel applications and experiences instead of dealing with API endpoints.
 
 #### What is Watson Personality Insight?
-IBM Watson offers AI and Machine Learning services through its Bluemix cloud platform. To get started quickly with Watson and Bluemix, create a free account .
+[Personality Insights](https://personality-insights-livedemo.mybluemix.net/) is a service provided by IBM Watson which applies linguistic analytics and personality theory to infer attributes from a person's unstructered text. 
 
 ## Installation
 
@@ -53,7 +53,7 @@ In the chat window enter the below command:
 watson: analyze 
 ```
 
-* Note:* The Team should have 2000 charecthers minimum to perform Personality Insight Analysis. 
+**Note:** The Team should have 2000 charecthers minimum to perform Personality Insight Analysis. 
 
 ## Reference
 
