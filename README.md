@@ -4,7 +4,7 @@
 
 # botkit-watson-bot
 
-`botkit-watson-bot` allows you to analyze user personality insights within Glip Team using [Botkit](https://www.github.com/howdyai/botkit) and IBM Watson.
+`botkit-watson-bot` allows you to analyze user's personality insights within Glip Team using [Botkit](https://www.github.com/howdyai/botkit) and IBM Watson.
 
 It takes advantage of Botkit's core functionality thus allowing you to create complex conversational flows via a simple interface. It also allows you to use [custom storage methods/systems](https://github.com/howdyai/botkit/blob/master/readme.md#storing-information) to enable data persistence across sessions.
 
