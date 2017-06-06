@@ -53,6 +53,8 @@ In the chat window enter the below command:
 watson: analyze 
 ```
 
+* Note:* The Team should have 2000 charecthers minimum to perform Personality Insight Analysis. 
+
 ## Reference
 
 Please see `botkit`'s guide and reference document [here](https://github.com/howdyai/botkit/blob/master/readme.md#developing-with-botkit).
