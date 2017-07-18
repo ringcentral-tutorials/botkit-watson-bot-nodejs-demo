@@ -52,7 +52,6 @@ controller.hears(['watson'], 'message_received', function (bot, message) {
 });
 
 controller.hears(['analyze'], 'message_received', function (bot,message) {
-    //console.log("In Hears:" + JSON.stringify(message));
     bot.api.posts().get({groupId: message.channel}).then(function(history) {
 
         var messages = [];
@@ -72,7 +71,6 @@ controller.hears(['analyze'], 'message_received', function (bot,message) {
                     console.log('error:', err)
                 }else{
                     controller.startTask(bot, message, function (task, convo) {
-                        console.log("personality response: " + JSON.stringify(response));
                         var top5 = response.personality;
                         for (var c = 0; c <  top5.length; c++) {
 
