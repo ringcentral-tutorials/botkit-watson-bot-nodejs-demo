@@ -43,10 +43,15 @@ var personality_insight = watson.personality_insights({
     username: process.env.WATSON_USERNAME,
     password: process.env.WATSON_PASSWORD,
     url: process.env.WATSON_URL,
+    version_date:process.env.WATSON_VERSION_DATE,
     version: process.env.WATSON_VERSION
 });
 
-controller.hears(['watson: analyze'], 'message_received', function (bot,message) {
+controller.hears(['watson'], 'message_received', function (bot, message) {
+    bot.reply(message, "hi, this is watson, How can I help you ? ");
+});
+
+controller.hears(['analyze'], 'message_received', function (bot,message) {
     //console.log("In Hears:" + JSON.stringify(message));
     bot.api.posts().get({groupId: message.channel}).then(function(history) {
 
@@ -67,13 +72,14 @@ controller.hears(['watson: analyze'], 'message_received', function (bot,message)
                     console.log('error:', err)
                 }else{
                     controller.startTask(bot, message, function (task, convo) {
-                        var top5 = response.tree.children[0].children[0].children;
-
+                        console.log("personality response: " + JSON.stringify(response));
+                        var top5 = response.personality;
                         for (var c = 0; c <  top5.length; c++) {
 
-                            convo.say('This channel has ' + Math.round(top5[c].percentage*100) + '% ' + top5[c].name);
+                           convo.say('This channel has ' + Math.round(top5[c].percentile*100) + '% ' + top5[c].name);
 
                         }
+
                     })
                 }
             }
