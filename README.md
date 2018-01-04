@@ -15,14 +15,14 @@ Here's an excerpt of Botkit's `readme.md` file:
 > [[Botkit](https://www.github.com/howdyai/botkit)] provides a semantic interface to sending and receiving messages so that developers can focus on creating novel applications and experiences instead of dealing with API endpoints.
 
 #### What is Watson Personality Insight?
-[Personality Insights](https://personality-insights-livedemo.mybluemix.net/) is a service provided by IBM Watson which applies linguistic analytics and personality theory to infer attributes from a person's unstructered text. 
+[Personality Insights](https://personality-insights-livedemo.mybluemix.net/) is a service provided by IBM Watson which applies linguistic analytics and personality theory to infer attributes from a person's unstructered text.
 
 ## Installation
 
 ```bash
 $ git clone https://github.com/ringcentral-tutorials/botkit-watson-bot-nodejs-demo.git
 $ cd <APP_DIRECTORY>
-$ npm install --save 
+$ npm install --save
 $ mv .env.template .env
 ```
 
@@ -30,15 +30,14 @@ $ mv .env.template .env
 Update **.env** file with the credentails for the below properties:
 ```
 GLIP_SERVER=https://platform.devtest.ringcentral.com
-GLIP_APPKEY=
-GLIP_APPSECRET=
-GLIP_USERNAME=
-GLIP_PASSWORD=
-GLIP_EXTENSION=
+GLIP_CLIENT_ID=
+GLIP_CLIENT_SECRET=
+OAUTH_REDIRECT_URI=https://47b0d581.ngrok.io
+GLIP_PORT=4000
 WATSON_USERNAME=
 WATSON_PASSWORD=
 WATSON_URL=https://gateway.watsonplatform.net/personality-insights/api
-WATSON_VERSION_DATE=2017-02-02
+WATSON_VERSION_DATE=2016-10-19
 WATSON_VERSION=v3
 ```
 
@@ -50,10 +49,10 @@ $ npm start
 ## Usage
 In the chat window enter the below command:
 ```
-watson: analyze 
+watson: analyze
 ```
 
-**Note:** The Team should have 2000 charecthers minimum to perform Personality Insight Analysis. 
+**Note:** The Team should have 2000 charecthers minimum to perform Personality Insight Analysis.
 
 ## Reference
 
@@ -74,4 +73,4 @@ Pull Requests (PRs) are welcome. Make sure you follow the same basic stylistic c
 
 [The MIT License (MIT)](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016 
+Copyright (c) 2016
