@@ -61,3 +61,6 @@ typings/
 .idea/
 .idea/vcs.xml
 .idea
+
+.dat
+token.dat
