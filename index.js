@@ -103,9 +103,10 @@ controller.hears(['watson: analyze'], 'message_received', function (bot,message)
 
                         for (var c = 0; c <  top5.length; c++) {
 
-                            convo.say('This channel has ' + Math.round(top5[c].percentage*100) + '% ' + top5[c].name);
+                           convo.say('This channel has ' + Math.round(top5[c].percentile*100) + '% ' + top5[c].name);
 
                         }
+
                     })
                 }
             }
