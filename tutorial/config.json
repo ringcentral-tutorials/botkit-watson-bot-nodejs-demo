@@ -1,6 +1,6 @@
 {
-    "title": "Glip Bot using IBM Watson and Botkit",
+    "title": "RingCentral Bot using IBM Watson and Botkit",
     "repo": "ringcentral-tutorials/botkit-watson-bot-nodejs-demo",
-    "description": "Learn how to build a Glip Bot with IBM Watson and Botkit using node.js",
+    "description": "Learn how to build a RingCentral Bot with IBM Watson and Botkit using node.js",
     "heroku": false
 }

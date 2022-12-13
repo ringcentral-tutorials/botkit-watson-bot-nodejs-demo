@@ -1,8 +1,8 @@
-.chapter(data-title='Getting Started with Glip Bots')
+.chapter(data-title='Getting Started with RingCentral Bots')
   .step(data-title='Welcome!', data-file='tutorial/config.json')
-    h2 Welcome to the Getting Started with RingCentral Glip Tutorials
+    h2 Welcome to the Getting Started with RingCentral Team Messaging Tutorials
 
-    p Glip provides a single, unified team workspace that empowers you to work, communicate, and collaberate faster and more effectively.
+    p RingCentral provides a single, unified team workspace that empowers you to work, communicate, and collaberate faster and more effectively.
 
 
     p In this tutorial, we will look at how to build bots to enhances the productivity even more than ever before usign IBM Watson.
@@ -18,7 +18,7 @@
         * Create an application defined in the [RingCentral Developer Portal](https://developers.ringcentral.com) that has the following properties:
 
             * Platform Type: server-only
-            * API Permissions: Glip
+            * API Permissions: Team Messaging
 
         * An [IBM Blumix](https://www.ibm.com/cloud-computing/bluemix/watson) account.
         * Credentials for IBM Watson personality Insight.
@@ -41,9 +41,9 @@
 
       The first file we'll look at is `config.json`. This contains high-level configuration information about your tutorial. This JSON file contains several properties you can declare about your tutorial:
 
-      * `GLIP_SERVER`: Developer account - Sandbox or Production
-      * `GLIP_CLIENT_ID`: Developer Account App Key.
-      * `GLIP_CLIENT_SECRET`: Developer Account App Secret.
+      * `RC_SERVER`: Developer account - Sandbox or Production
+      * `RC_CLIENT_ID`: Developer Account App Key.
+      * `RC_CLIENT_SECRET`: Developer Account App Secret.
       * `OAUTH_REDIRECT_URI`: Redirect URI for 3-legged oAuth
       * `WATSON_USERNAME`: IBM Blumix Username
       * `WATSON_PASSWORD`: IBM Blumix Password
@@ -59,14 +59,14 @@
 
      This install two major packages:
 
-      * `botkit`: Botkit is one of the most popular open-source toolkits for building bots. We will use the Glip adapter for the current example.
+      * `botkit`: Botkit is one of the most popular open-source toolkits for building bots. We will use the Glip adapter for the current example. "Glip" is an older name for RingCentral Team Messaging.  
       * `watson-developer-cloud`: Watson Developer cloud contains the modules for Machine Learning and AI. We will be using the Personality Insight module in the current example.
 
   .step(data-title='Instantiate Glip Botkit adapter', data-file='index.js', data-highlight='14-40')
     :markdown
       Here we will instantiate the botkit adapater by calling the `botkit.glipbot()` module. The botkit constructure returns a controller objects. By attaching event handlers to the controller object, developers can specify what their bot should look and respond to, including keywords, patterns and various messaging and status events.
 
-      The controller object is then userd to `spawn()` bot instances that represents a specific bot identity and connection to Glip. Once spawned and connected to the API, the bot user will appear online in Glip, and can then be used to send messages and conduct conversations with users.
+      The controller object is then userd to `spawn()` bot instances that represents a specific bot identity and connection to RingCentral. Once spawned and connected to the API, the bot user will appear online in RingCentral Team Messaging, and can then be used to send messages and conduct conversations with users.
 
   .step(data-title='Create IBM Watson instance', data-file='index.js', data-highlight='42-47')
     :markdown
@@ -93,14 +93,14 @@
 
         `npm start`
 
-        Now login to the sandbox account `http:\\glip.devtest.ringcentral.com` and add the bot by clicking on the `+` icon as shown below:
+        Now login to the sandbox account `http://app.devtest.ringcentral.com` and add the bot by clicking on the `+` icon as shown below:
 
-        ![add Glip bot](images/add_user.png)
+        ![add RingCentral bot](images/add_user.png)
 
   .step(data-file='', data-highlight='')
     :markdown
       ## Output
 
-        Type `watson: analyze`. Glip will send all history in the group and respond back with top 5 personality insigths as shown in the image.
+        Type `watson: analyze`. RingCentral will send all history in the group and respond back with top 5 personality insigths as shown in the image.
 
         ![](images/IBM_Watson_output.png)

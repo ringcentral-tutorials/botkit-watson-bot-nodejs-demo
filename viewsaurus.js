@@ -155,7 +155,7 @@ var dpwMenu = function () {
                     link: 'https://developer.ringcentral.com/api-products/fax'
                 },
                 {
-                    title: 'Glip - Team Messaging',
+                    title: 'Team Messaging',
                     link: 'https://developer.ringcentral.com/api-products/team-messaging'
                 },
                 {
