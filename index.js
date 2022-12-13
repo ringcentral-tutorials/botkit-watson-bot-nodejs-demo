@@ -78,7 +78,7 @@ controller.hears(['watson: analyze'], 'message_received', function (bot,message)
 
     console.log("In Hears:" + JSON.stringify(message));
 
-    controller.getRCPlatform().get('/glip/posts',{groupId: message.channel}).then(function(history) {
+    controller.getRCPlatform().get('/team-messaging/v1/chats/'+message.channel+'/posts').then(function(history) {
         console.log("History: " + history.json());
         var messages = [];
         var data = history.json();
