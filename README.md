@@ -4,7 +4,7 @@
 
 # botkit-watson-bot
 
-`botkit-watson-bot` allows you to analyze user's personality insights within Glip Team using [Botkit](https://www.github.com/howdyai/botkit) and IBM Watson.
+`botkit-watson-bot` allows you to analyze user's personality insights within a RingCentral Team Messaging team using [Botkit](https://www.github.com/howdyai/botkit) and IBM Watson.
 
 It takes advantage of Botkit's core functionality thus allowing you to create complex conversational flows via a simple interface. It also allows you to use [custom storage methods/systems](https://github.com/howdyai/botkit/blob/master/readme.md#storing-information) to enable data persistence across sessions.
 
@@ -27,13 +27,15 @@ $ mv .env.template .env
 ```
 
 ## Config
+
 Update **.env** file with the credentails for the below properties:
-```
-GLIP_SERVER=https://platform.devtest.ringcentral.com
-GLIP_CLIENT_ID=
-GLIP_CLIENT_SECRET=
+
+```bash
+RC_SERVER=https://platform.devtest.ringcentral.com
+RC_CLIENT_ID=
+RC_CLIENT_SECRET=
 OAUTH_REDIRECT_URI=https://47b0d581.ngrok.io
-GLIP_PORT=4000
+PORT=4000
 WATSON_USERNAME=
 WATSON_PASSWORD=
 WATSON_URL=https://gateway.watsonplatform.net/personality-insights/api
@@ -42,12 +44,14 @@ WATSON_VERSION=v3
 ```
 
 ## Run
-```
+
+```bash
 $ npm start
 ```
 
 ## Usage
 In the chat window enter the below command:
+
 ```
 watson: analyze
 ```
@@ -57,7 +61,6 @@ watson: analyze
 ## Reference
 
 Please see `botkit`'s guide and reference document [here](https://github.com/howdyai/botkit/blob/master/readme.md#developing-with-botkit).
-
 
 ## Contributing
 
